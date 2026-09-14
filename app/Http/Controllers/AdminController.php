@@ -48,7 +48,7 @@ class AdminController extends Controller
 
     public function change(Blog $blog)
     {
-        $blog->update(['status' => ! $blog->status]);
+        $blog->update(['status' => !$blog->status]);
 
         return redirect()->route('author.blog');
     }

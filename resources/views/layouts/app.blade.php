@@ -13,6 +13,9 @@
     <link rel="dns-prefetch" href="//fonts.bunny.net">
     <link href="https://fonts.bunny.net/css?family=Nunito" rel="stylesheet">
 
+    <!-- Summernote Lite CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote-lite.min.css" rel="stylesheet">
+
     <!-- Scripts -->
     @vite(['resources/sass/app.scss', 'resources/js/app.js'])
 </head>
@@ -20,7 +23,7 @@
     <div id="app">
         <nav class="navbar navbar-expand-md navbar-light pastel-navbar shadow-sm">
             <div class="container">
-                <a class="navbar-brand" href="{{ route('author.dashboard') }}">
+                <a class="navbar-brand" href="{{ route('home') }}">
                     Blog Application
                 </a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
@@ -31,7 +34,7 @@
                     <!-- Left Side Of Navbar -->
                     <ul class="navbar-nav me-auto">
                         <li class="nav-item">
-                            <a class="nav-link" href="{{ route('author.dashboard') }}">หน้าแรก</a>
+                            <a class="nav-link" href="{{ route('home') }}">หน้าแรก</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="{{ route('author.about') }}">เกี่ยวกับเรา</a>
@@ -96,5 +99,21 @@
             </div>
         </main>
     </div>
+
+
+    <!-- jQuery CDN -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <!-- Summernote Lite JS CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote-lite.min.js"></script>
+
+    <script>
+        $(document).ready(function() {
+            $('#content').summernote({
+                placeholder: 'เขียนเนื้อหาบทความที่นี่...',
+                tabsize: 2,
+                height: 250
+            });
+        });
+    </script>
 </body>
 </html>
